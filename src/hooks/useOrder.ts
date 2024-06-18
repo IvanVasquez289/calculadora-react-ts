@@ -17,8 +17,15 @@ export default function useOrder() {
             setOrder([...order,{...item, quantity: 1}])
         }
     }
+
+    const removeItem = (id: MenuItem["id"]) => {
+        const updatedOrder = order.filter((orderState) => orderState.id !== id)
+        setOrder(updatedOrder)
+    }
+
     return {
         order,
-        addItem
+        addItem,
+        removeItem
     }
 }
