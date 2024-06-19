@@ -10,10 +10,7 @@ const OrderContent = ({ order,removeItem }: OrderContentProps) => {
     <div>
       <h2 className="text-4xl font-black">Consumo</h2>
       <div className="mt-10 ">
-        {order.length === 0 ? (
-            <p>No hay items en el carrito</p>
-        ):(
-            order.map((item) => (
+        { order.map((item) => (
                 <div key={item.id} className="flex justify-between items-center border-t p-5 border-slate-200  last-of-type:border-b">
                     <div>
                         <p>{item.name} - {formatCurrency(item.price)}</p>
@@ -25,8 +22,7 @@ const OrderContent = ({ order,removeItem }: OrderContentProps) => {
                         X
                     </button>
                 </div>
-            ))
-        )}
+            ))}
       </div>
     </div>
   );
